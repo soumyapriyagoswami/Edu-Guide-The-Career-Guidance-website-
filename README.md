@@ -62,7 +62,7 @@ pip install -r requirements.txt
 '''bash
 flask run
 Then open: http://127.0.0.1:5000/ 🌐
-
+```
 🌍 Live Demo
 👉 Add your live demo link here once deployed
 
@@ -83,9 +83,6 @@ Open a Pull Request ✅
 🧑‍💻 Author
 Soumyapriya Goswami
 
-🌐 LinkedIn
-🐦 Twitter
-📧 Email: your.email@example.com
 
 📜 License
 This project is licensed under the MIT License – see the LICENSE file for details.
@@ -95,20 +92,4 @@ If you like this project, give it a star ⭐ on GitHub to support its developmen
 
 
 
-This README.md file includes:
-1. Professional badges for license, tech stack, and contributions
-2. Clear feature descriptions with emojis for visual appeal
-3. Placeholder sections for screenshots (replace with actual images)
-4. Detailed tech stack information
-5. Visual project structure representation
-6. Step-by-step installation instructions
-7. Contribution guidelines
-8. Author information section
-9. License information
-
-Remember to:
-1. Replace `YOUR_USERNAME` with your actual GitHub username
-2. Add real screenshot images once you have them
-3. Update the author information with your actual details
-4. Add your live demo link when available
-5. Create the actual project structure with the files mentioned
+T
