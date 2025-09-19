@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Government Degree College, Srinagar",
+        "location": "Srinagar, J&K",
+        "programs": ["B.A. English", "B.Sc. Physics", "B.Com"],
+        "cutoff": "75%",
+        "facilities": ["Hostel", "Lab", "Library", "Internet"]
+    },
+    {
+        "name": "Government Degree College, Jammu",
+        "location": "Jammu, J&K",
+        "programs": ["B.A. History", "B.Sc. Chemistry", "BBA"],
+        "cutoff": "70%",
+        "facilities": ["Hostel", "Lab", "Library"]
+    },
+    {
+        "name": "Government Degree College, Anantnag",
+        "location": "Anantnag, J&K",
+        "programs": ["B.A. Economics", "B.Sc. Maths", "B.Com"],
+        "cutoff": "65%",
+        "facilities": ["Library", "Internet"]
+    }
+]

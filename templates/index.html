@@ -1,0 +1,302 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row align-items-center mb-5">
+    <div class="col-lg-10 mx-auto text-center">
+        <!-- Hero Section -->
+        <h1 class="display-4 fw-bold mb-3 hero-title">
+            Welcome to <span class="highlight">EduGuide J&amp;K</span>
+        </h1>
+        <p class="tagline">✨ Guiding every student to the right stream, the right college, the right career ✨</p>
+
+        <!-- Auto Typing Text -->
+        <p class="lead mb-5">
+            <span id="typed-text"></span>
+        </p>
+
+        <!-- Feature Cards -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card h-100 feature-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-brain fa-3x icon-gradient mb-3"></i>
+                        <h5 class="card-title fw-bold">Aptitude Quiz</h5>
+                        <p class="card-text short">Discover your strengths and get stream suggestions.</p>
+                        <p class="card-text extra">Our adaptive quiz helps you understand your logical, analytical, and creative abilities in minutes.</p>
+                        <a href="/quiz" class="btn btn-gradient">Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 feature-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-school fa-3x icon-gradient mb-3"></i>
+                        <h5 class="card-title fw-bold">Nearby Colleges</h5>
+                        <p class="card-text short">Explore government colleges and programs.</p>
+                        <p class="card-text extra">Get details on courses, eligibility, and location to make better admission choices.</p>
+                        <a href="/colleges" class="btn btn-gradient-green">View Colleges</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 feature-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line fa-3x icon-gradient mb-3"></i>
+                        <h5 class="card-title fw-bold">Career Paths</h5>
+                        <p class="card-text short">Map courses to jobs and higher studies.</p>
+                        <p class="card-text extra">Learn about trending careers, salary ranges, and future opportunities in your chosen field.</p>
+                        <a href="/career/science" class="btn btn-gradient-blue">Explore Careers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Clickable Timeline -->
+        <h2 class="fw-bold mb-4">Your Journey Roadmap</h2>
+        <div class="timeline">
+            <div class="timeline-step" data-detail="Take our quiz to know your interests and strengths.">
+                <span>Step 1</span> Explore Yourself
+            </div>
+            <div class="timeline-step" data-detail="Receive personalized subject & stream recommendations.">
+                <span>Step 2</span> Get Stream Suggestion
+            </div>
+            <div class="timeline-step" data-detail="Find nearby government colleges and programs.">
+                <span>Step 3</span> Choose College
+            </div>
+            <div class="timeline-step" data-detail="Map subjects to career paths and higher studies.">
+                <span>Step 4</span> Plan Career
+            </div>
+            <div class="timeline-step" data-detail="Track progress and stay updated with guidance.">
+                <span>Step 5</span> Build Future
+            </div>
+        </div>
+        <div id="timeline-detail" class="timeline-detail">Click a step to see details.</div>
+
+        <!-- Statistics Section -->
+        <div class="row text-center mt-5">
+            <div class="col-md-4">
+                <h2 class="fw-bold counter">5,000+</h2>
+                <p>Students Guided</p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="fw-bold counter">120+</h2>
+                <p>Colleges Listed</p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="fw-bold counter">50+</h2>
+                <p>Career Paths</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="accordion mt-5" id="faqAccordion">
+            <h2 class="fw-bold mb-3">FAQs</h2>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="q1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1">
+                        How does the quiz work?
+                    </button>
+                </h2>
+                <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">The quiz analyzes your aptitude and interests to suggest the best academic streams for you.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="q2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">
+                        Is this guidance free?
+                    </button>
+                </h2>
+                <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Yes, EduGuide J&amp;K provides free educational and career guidance to all students.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="q3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">
+                        Can I change my chosen stream later?
+                    </button>
+                </h2>
+                <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Yes, students can switch streams in some cases, though it depends on school/college policies.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="q4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4">
+                        How accurate are the career suggestions?
+                    </button>
+                </h2>
+                <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Our recommendations are based on aptitude, interests, and future opportunities. They give strong guidance but final choice is always yours.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="q5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5">
+                        Do you provide scholarship information?
+                    </button>
+                </h2>
+                <div id="a5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Yes, we also share updates on government scholarships and financial aid programs.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Typed.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var typed = new Typed("#typed-text", {
+            strings: [
+                "Your one-stop personalized career and education advisor. Make informed decisions for your future after Class 10 or 12.",
+                "आपका व्यक्तिगत कैरियर और शिक्षा सलाहकार। कक्षा 10 या 12 के बाद अपने भविष्य के लिए सूझ-बूझ वाले निर्णय लें।",
+                "আপনার ব্যক্তিগত ক্যারিয়ার এবং শিক্ষা পরামর্শদাতা। ক্লাস ১০ বা ১২ এর পর আপনার ভবিষ্যতের জন্য সঠিক সিদ্ধান্ত নিন।"
+            ],
+            typeSpeed: 45,
+            backSpeed: 25,
+            backDelay: 2000,
+            loop: true
+        });
+
+        // Timeline Click Effect
+        const steps = document.querySelectorAll(".timeline-step");
+        const detailBox = document.getElementById("timeline-detail");
+        steps.forEach(step => {
+            step.addEventListener("click", () => {
+                // remove active from others
+                steps.forEach(s => s.classList.remove("active"));
+                step.classList.add("active");
+                detailBox.innerText = step.dataset.detail;
+            });
+        });
+    });
+</script>
+
+<!-- Extra Styling -->
+<style>
+    body {
+        background: linear-gradient(135deg, #f5f7fa, #e6ecf9);
+    }
+
+    /* Hero Title Gradient Animation */
+    .hero-title {
+        background: linear-gradient(90deg, #0d6efd, #6610f2, #20c997, #ff7eb3);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientMove 6s ease infinite;
+    }
+    @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    .highlight {
+        color: #ffd700;
+        text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    }
+
+    /* Feature Cards */
+    .feature-card {
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    .feature-card:hover {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    .feature-card .extra {
+        display: none;
+        font-size: 0.9rem;
+        color: #555;
+        margin-top: 10px;
+    }
+    .feature-card:hover .extra {
+        display: block;
+    }
+
+    /* Icon Gradient */
+    .icon-gradient {
+        background: linear-gradient(45deg, #0d6efd, #6610f2, #20c997);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Buttons */
+    .btn-gradient, .btn-gradient-green, .btn-gradient-blue {
+        border: none;
+        color: #fff;
+        border-radius: 12px;
+        padding: 10px 20px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    .btn-gradient { background: linear-gradient(45deg, #0d6efd, #6610f2); }
+    .btn-gradient:hover { transform: scale(1.05); }
+    .btn-gradient-green { background: linear-gradient(45deg, #20c997, #0d6efd); }
+    .btn-gradient-blue { background: linear-gradient(45deg, #6610f2, #0dcaf0); }
+
+    /* Timeline */
+    .timeline {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+    .timeline-step {
+        background: #fff;
+        border-radius: 12px;
+        padding: 15px;
+        margin: 10px;
+        flex: 1;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .timeline-step:hover {
+        background: linear-gradient(135deg, #0d6efd, #6610f2, #20c997);
+        color: #fff;
+        transform: scale(1.05);
+    }
+    .timeline-step.active {
+        background: linear-gradient(135deg, #20c997, #0dcaf0);
+        color: #fff;
+        transform: scale(1.05);
+    }
+    .timeline-step span {
+        display: block;
+        font-weight: bold;
+    }
+    .timeline-detail {
+        background: rgba(255,255,255,0.9);
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 20px;
+        font-style: italic;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %}

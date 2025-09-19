@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="career-hero text-center text-white py-5 mb-4">
+    <h1 class="fw-bold"><i class="fas fa-rocket"></i> {{ stream_data.name }} Pathway</h1>
+    <p class="lead">🚀 Unlock your future by exploring careers, degrees, and opportunities tailored to <strong>{{ stream_data.name }}</strong>.</p>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+            <div class="card-body p-4">
+                <p class="lead text-center mb-5">{{ stream_data.description }}</p>
+
+                <!-- Interactive Roadmap Timeline -->
+                <div class="mt-5">
+                    <h4 class="fw-bold text-center mb-4"><i class="fas fa-map"></i> Your Interactive Career Roadmap</h4>
+
+                    <div class="timeline">
+                        <!-- Step 1 -->
+                        <div class="timeline-step completed" data-bs-toggle="collapse" data-bs-target="#step1" aria-expanded="false">
+                            <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                            <div class="timeline-content">
+                                <h6>Step 1: Build Strong Foundation</h6>
+                                <p class="text-muted small">Click to expand</p>
+                                <div class="collapse" id="step1">
+                                    <p class="mt-2">📘 Focus on your core subjects (Math, Science, Languages).  
+                                    Explore extracurricular activities to discover your interests and build confidence.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="timeline-step active" data-bs-toggle="collapse" data-bs-target="#step2" aria-expanded="true">
+                            <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                            <div class="timeline-content">
+                                <h6>Step 2: Pursue Degree</h6>
+                                <p class="text-muted small">Click to expand</p>
+                                <div class="collapse show" id="step2">
+                                    <p class="mt-2">🎓 Choose a <strong>{{ stream_data.name }}</strong> degree that aligns with your career aspirations.  
+                                    Participate in student clubs, research projects, and competitions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="timeline-step" data-bs-toggle="collapse" data-bs-target="#step3" aria-expanded="false">
+                            <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="timeline-content">
+                                <h6>Step 3: Internship & Experience</h6>
+                                <p class="text-muted small">Click to expand</p>
+                                <div class="collapse" id="step3">
+                                    <p class="mt-2">💼 Gain practical experience through internships, hackathons, and volunteering.  
+                                    Build a portfolio of projects to showcase your skills.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="timeline-step" data-bs-toggle="collapse" data-bs-target="#step4" aria-expanded="false">
+                            <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="timeline-content">
+                                <h6>Step 4: Career Launch</h6>
+                                <p class="text-muted small">Click to expand</p>
+                                <div class="collapse" id="step4">
+                                    <p class="mt-2">🏆 Start your dream career and continue learning.  
+                                    Aim for higher certifications, leadership roles, and contribute to your industry.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connect with Alumni Section -->
+                <div class="mt-5">
+                    <h4 class="fw-bold text-center mb-4"><i class="fas fa-users"></i> Connect with Alumni</h4>
+                    <p class="text-center text-muted mb-4">🎯 Learn directly from those who walked this path before you!</p>
+                    <div class="row g-4 justify-content-center">
+                        <!-- Alumni Card 1 -->
+                        <div class="col-md-4">
+                            <div class="card alumni-card text-center shadow-sm border-0 rounded-4">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;object-fit:cover;" alt="Alumni">
+                                <div class="card-body">
+                                    <h6 class="fw-bold">Rahul Mehta</h6>
+                                    <p class="text-muted small mb-1">Software Engineer @ Google</p>
+                                    <button class="btn btn-outline-primary btn-sm"><i class="fas fa-comments"></i> Ask for Guidance</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Alumni Card 2 -->
+                        <div class="col-md-4">
+                            <div class="card alumni-card text-center shadow-sm border-0 rounded-4">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;object-fit:cover;" alt="Alumni">
+                                <div class="card-body">
+                                    <h6 class="fw-bold">Sneha Kapoor</h6>
+                                    <p class="text-muted small mb-1">Entrepreneur & Startup Mentor</p>
+                                    <button class="btn btn-outline-primary btn-sm"><i class="fas fa-comments"></i> Connect</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Alumni Card 3 -->
+                        <div class="col-md-4">
+                            <div class="card alumni-card text-center shadow-sm border-0 rounded-4">
+                                <img src="https://randomuser.me/api/portraits/men/33.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;object-fit:cover;" alt="Alumni">
+                                <div class="card-body">
+                                    <h6 class="fw-bold">Amit Sharma</h6>
+                                    <p class="text-muted small mb-1">Research Scientist @ NASA</p>
+                                    <button class="btn btn-outline-primary btn-sm"><i class="fas fa-comments"></i> Get Advice</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="mt-5 text-center">
+                    <a href="/colleges" class="btn btn-lg btn-success btn-glow px-5 py-3">
+                        🎓 Find Nearby Colleges & Unlock Next Level
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Styles -->
+<style>
+    .career-hero {
+        background: linear-gradient(135deg, #007bff, #6610f2, #17a2b8);
+        animation: gradientBG 8s ease infinite;
+        background-size: 300% 300%;
+    }
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .btn-glow {
+        box-shadow: 0 0 15px rgba(0,255,127,0.7);
+        transition: transform 0.2s, box-shadow 0.3s;
+    }
+    .btn-glow:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 25px rgba(0,255,127,1);
+    }
+
+    /* Timeline Styles */
+    .timeline {
+        position: relative;
+        padding: 20px 0;
+        border-left: 3px solid #0d6efd;
+        margin: 30px 0;
+    }
+    .timeline-step {
+        position: relative;
+        margin-left: 40px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s forwards;
+    }
+    .timeline-step:nth-child(1) { animation-delay: 0.2s; }
+    .timeline-step:nth-child(2) { animation-delay: 0.6s; }
+    .timeline-step:nth-child(3) { animation-delay: 1s; }
+    .timeline-step:nth-child(4) { animation-delay: 1.4s; }
+
+    .timeline-icon {
+        position: absolute;
+        left: -52px;
+        top: 0;
+        background: #0d6efd;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .timeline-step:hover .timeline-icon {
+        transform: scale(1.2);
+        box-shadow: 0 0 20px rgba(13,110,253,0.6);
+    }
+
+    .timeline-step.completed .timeline-icon {
+        background: #28a745;
+        box-shadow: 0 0 12px rgba(40,167,69,0.6);
+    }
+    .timeline-step.active .timeline-icon {
+        background: #ffc107;
+        color: #000;
+        box-shadow: 0 0 12px rgba(255,193,7,0.6);
+    }
+
+    .timeline-content {
+        padding: 12px 16px;
+        background: #f9f9ff;
+        border-radius: 10px;
+        border: 1px solid #e0e0f0;
+        transition: all 0.3s ease;
+    }
+    .timeline-step:hover .timeline-content {
+        background: #eef5ff;
+        transform: translateX(5px);
+    }
+
+    /* Alumni Cards */
+    .alumni-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .alumni-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+{% endblock %}

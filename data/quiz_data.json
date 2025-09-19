@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "When faced with a real-life problem, how do you usually solve it?",
+      "options": [
+        { "text": "Break it down logically and test solutions", "value": "science" },
+        { "text": "Think of creative ways or tell stories around it", "value": "arts" },
+        { "text": "Plan finances, resources, or step-by-step execution", "value": "commerce" },
+        { "text": "Discuss and collaborate with people to find solutions", "value": "arts" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Which type of school subjects naturally feels easier or more exciting to you?",
+      "options": [
+        { "text": "Maths, Physics, Computer Science", "value": "science" },
+        { "text": "History, Literature, Political Science", "value": "arts" },
+        { "text": "Business Studies, Economics, Accounts", "value": "commerce" },
+        { "text": "Psychology, Sociology, Law", "value": "arts" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "If you imagine yourself in 10 years, which situation excites you most?",
+      "options": [
+        { "text": "Inventing new technologies or working in a lab", "value": "science" },
+        { "text": "Writing a book, designing, or performing", "value": "arts" },
+        { "text": "Running a startup or being a finance expert", "value": "commerce" },
+        { "text": "Helping communities as a lawyer, journalist, or activist", "value": "arts" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which skill do your teachers/friends say you’re naturally good at?",
+      "options": [
+        { "text": "Problem-solving & critical thinking", "value": "science" },
+        { "text": "Communication & creativity", "value": "arts" },
+        { "text": "Leadership & money management", "value": "commerce" },
+        { "text": "Understanding people & teamwork", "value": "arts" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What motivates you the most when learning something new?",
+      "options": [
+        { "text": "Curiosity about how things work", "value": "science" },
+        { "text": "Expressing myself or exploring ideas", "value": "arts" },
+        { "text": "Turning knowledge into money/opportunities", "value": "commerce" },
+        { "text": "Making an impact on society", "value": "arts" }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "How do you usually approach group projects at school?",
+      "options": [
+        { "text": "Take charge of technical parts (coding, experiments, calculations)", "value": "science" },
+        { "text": "Design presentations, make posters, or create stories", "value": "arts" },
+        { "text": "Handle budget, planning, and coordination", "value": "commerce" },
+        { "text": "Motivate the team and ensure everyone feels included", "value": "arts" }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Which extracurricular activity do you enjoy most?",
+      "options": [
+        { "text": "Science club, robotics, coding competitions", "value": "science" },
+        { "text": "Drama, art, music, writing contests", "value": "arts" },
+        { "text": "Entrepreneurship fests, business case studies", "value": "commerce" },
+        { "text": "Debating, social service, student council", "value": "arts" }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "If you had to pick a school project, which would you choose?",
+      "options": [
+        { "text": "Building a robot or app", "value": "science" },
+        { "text": "Writing a play, designing an exhibition", "value": "arts" },
+        { "text": "Creating a business plan or stock market simulation", "value": "commerce" },
+        { "text": "Organizing a campaign for social change", "value": "arts" }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Which type of achievement makes you most proud?",
+      "options": [
+        { "text": "Winning a science/math competition", "value": "science" },
+        { "text": "Publishing a story, painting, or speech", "value": "arts" },
+        { "text": "Earning profit in a project or winning a finance quiz", "value": "commerce" },
+        { "text": "Helping someone or leading a community event", "value": "arts" }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Which environment do you imagine yourself thriving in?",
+      "options": [
+        { "text": "A research lab, hospital, or tech company", "value": "science" },
+        { "text": "A newsroom, design studio, or courtroom", "value": "arts" },
+        { "text": "A corporate office, bank, or your own startup", "value": "commerce" },
+        { "text": "An NGO, international organization, or government office", "value": "arts" }
+      ]
+    }
+  ],
+  "stream_suggestions": {
+    "science": {
+      "name": "Science Stream",
+      "description": "Ideal for those interested in research, technology, and innovation.",
+      "careers": ["Engineer", "Doctor", "Scientist", "Data Analyst"],
+      "degrees": ["B.Sc. Physics", "B.Sc. Chemistry", "B.Tech"]
+    },
+    "arts": {
+      "name": "Arts Stream",
+      "description": "Perfect for creative minds and those passionate about humanities.",
+      "careers": ["Journalist", "Lawyer", "Teacher", "Designer"],
+      "degrees": ["B.A. English", "B.A. History", "LLB"]
+    },
+    "commerce": {
+      "name": "Commerce Stream",
+      "description": "Suited for business-savvy individuals interested in finance and management.",
+      "careers": ["Accountant", "Banker", "Entrepreneur", "Marketer"],
+      "degrees": ["B.Com", "BBA", "CA"]
+    }
+  }
+}

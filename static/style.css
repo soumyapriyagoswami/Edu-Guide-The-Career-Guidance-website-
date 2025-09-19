@@ -1,0 +1,46 @@
+/* static/style.css - Unchanged */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.card {
+    border-radius: 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.navbar-brand i {
+    margin-right: 8px;
+}
+
+.progress-bar {
+    font-weight: bold;
+}
+
+.question {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #007bff;
+}
+
+.form-check-label {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.form-check-input:checked + .form-check-label {
+    background-color: #e3f2fd;
+}
+
+#results .alert {
+    border-radius: 15px;
+    border: none;
+}

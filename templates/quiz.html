@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="quiz-hero text-center text-white py-5 mb-5">
+    <h2 class="fw-bold"><i class="fas fa-question-circle"></i> Aptitude & Interest Quiz</h2>
+    <p class="lead">Answer 5 quick questions to unlock your personalized stream & AI-powered career guidance</p>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card quiz-card shadow-lg border-0 rounded-4">
+            <div class="card-body p-4">
+                <!-- Quiz Form -->
+                <form id="quizForm">
+                    {% for question in questions %}
+                    <div class="question mb-4 p-3 rounded shadow-sm bg-light" data-qid="{{ question.id }}">
+                        <h5 class="fw-bold text-primary">{{ question.question }}</h5>
+                        {% for option in question.options %}
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="radio" name="q{{ question.id }}" value="{{ option.value }}" id="q{{ question.id }}_{{ loop.index }}">
+                            <label class="form-check-label" for="q{{ question.id }}_{{ loop.index }}">
+                                {{ option.text }}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-gradient w-100 py-2 fw-bold">🚀 Get AI Suggestions</button>
+                </form>
+
+                <!-- Results -->
+                <div id="results" class="mt-5" style="display: none;">
+                    <div class="result-card p-4 rounded-4 shadow-lg">
+                        <h5 class="fw-bold mb-3">
+                            <i class="fas fa-check-circle text-success"></i> 
+                            Your Recommended Stream: 
+                            <span id="streamName" class="text-gradient"></span>
+                        </h5>
+                        <p id="streamDesc" class="lead text-muted"></p>
+
+                        <ul class="list-unstyled fs-6">
+                            <li><i class="fas fa-briefcase text-primary"></i> <strong>Careers:</strong> <span id="careers"></span></li>
+                            <li><i class="fas fa-graduation-cap text-warning"></i> <strong>Degrees:</strong> <span id="degrees"></span></li>
+                        </ul>
+
+                        <!-- AI Career Recommendations -->
+                        <div class="mt-4">
+                            <h6 class="fw-bold text-primary">
+                                <i class="fas fa-robot"></i> AI-Powered Career Recommendations
+                            </h6>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                {% for i in range(3) %}
+                                <span class="badge ai-career-badge px-3 py-2 fs-6" id="aiCareerName{{ i }}">
+                                    🌟 Top Career {{ i+1 }}
+                                </span>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <a id="careerLink" href="#" class="btn btn-explore mt-4 fw-bold">
+                            🌟 Explore Career Path
+                        </a>
+                    </div>
+
+                    <!-- Scores with Animated Progress -->
+                    <div class="mt-5">
+                        <h6 class="fw-bold mb-3">📊 Your Scores:</h6>
+                        <div class="progress mb-3 rounded-pill" style="height: 28px;">
+                            <div class="progress-bar bg-success fw-bold" id="scienceBar" role="progressbar" style="width: 0%;">
+                                Science: <span id="scienceScore">0</span>%
+                            </div>
+                        </div>
+                        <div class="progress mb-3 rounded-pill" style="height: 28px;">
+                            <div class="progress-bar bg-info fw-bold text-dark" id="artsBar" role="progressbar" style="width: 0%;">
+                                Arts: <span id="artsScore">0</span>%
+                            </div>
+                        </div>
+                        <div class="progress rounded-pill" style="height: 28px;">
+                            <div class="progress-bar bg-warning fw-bold text-dark" id="commerceBar" role="progressbar" style="width: 0%;">
+                                Commerce: <span id="commerceScore">0</span>%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Extra Styling -->
+<style>
+    .quiz-hero {
+        background: linear-gradient(135deg, #0d6efd, #6610f2);
+        border-radius: 15px;
+    }
+    .quiz-card {
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+    }
+    .btn-gradient {
+        background: linear-gradient(45deg, #0d6efd, #20c997);
+        border: none;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+    .btn-gradient:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(13,110,253,0.3);
+    }
+    .text-gradient {
+        background: linear-gradient(45deg, #ff7eb3, #ff758c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .bg-gradient {
+        background: linear-gradient(45deg, #0dcaf0, #6610f2);
+        color: white;
+    }
+    .result-card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: fadeInUp 0.8s ease;
+    }
+    .ai-career-badge {
+        background: linear-gradient(45deg, #20c997, #0d6efd);
+        color: white;
+        border-radius: 30px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+    }
+    .ai-career-badge:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 15px rgba(13, 110, 253, 0.3);
+    }
+    .btn-explore {
+        background: linear-gradient(45deg, #ff7eb3, #ff758c);
+        border: none;
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+    .btn-explore:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(255, 118, 140, 0.3);
+    }
+    .progress-bar {
+        transition: width 1.2s ease-in-out;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<!-- Confetti Animation -->
+<script>
+function launchConfetti() {
+    const duration = 2000;
+    const end = Date.now() + duration;
+    (function frame() {
+        const colors = ['#0d6efd', '#20c997', '#ff7eb3', '#ff758c', '#ffc107'];
+        const confetti = document.createElement('div');
+        confetti.style.position = 'fixed';
+        confetti.style.width = '10px';
+        confetti.style.height = '10px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.top = '-10px';
+        confetti.style.opacity = 0.8;
+        confetti.style.borderRadius = '50%';
+        document.body.appendChild(confetti);
+
+        let fall = setInterval(() => {
+            let top = parseFloat(confetti.style.top);
+            if (top < window.innerHeight) {
+                confetti.style.top = top + 5 + 'px';
+            } else {
+                confetti.remove();
+                clearInterval(fall);
+            }
+        }, 16);
+
+        if (Date.now() < end) requestAnimationFrame(frame);
+    })();
+}
+
+// Show confetti when results appear
+document.addEventListener("DOMContentLoaded", () => {
+    const quizForm = document.getElementById("quizForm");
+    quizForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        document.getElementById("results").style.display = "block";
+        launchConfetti();
+    });
+});
+</script>
+{% endblock %}
