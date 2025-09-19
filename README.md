@@ -46,8 +46,6 @@ career-pathway-app/
 
 text
 
----
-
 ## ⚡ Installation & Setup  
 
 ### 1️⃣ **Clone the Repository**
@@ -61,7 +59,7 @@ source venv/bin/activate    # On macOS/Linux
 venv\Scripts\activate       # On Windows
 pip install -r requirements.txt
 3️⃣ Run the Application
-bash
+'''bash
 flask run
 Then open: http://127.0.0.1:5000/ 🌐
 
@@ -95,7 +93,7 @@ This project is licensed under the MIT License – see the LICENSE file for deta
 ⭐ Show Your Support
 If you like this project, give it a star ⭐ on GitHub to support its development!
 
-text
+
 
 This README.md file includes:
 1. Professional badges for license, tech stack, and contributions
